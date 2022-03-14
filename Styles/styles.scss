@@ -1,0 +1,409 @@
+@import url("https://fonts.google.com/specimen/Spartan");
+
+$Main_1: hsl(222, 26%, 31%);
+$Toggle_keypad_1: hsl(223, 31%, 20%);
+$Screen_1: hsl(224, 36%, 15%);
+$KeyB_1: hsl(225, 21%, 49%);
+$KeyS_1: hsl(224, 28%, 35%);
+$KeyBT_1: hsl(6, 63%, 50%);
+$KeySt_1: hsl(6, 70%, 34%);
+$KeyNB_1: hsl(30, 25%, 89%);
+$KeySS_1: hsl(28, 16%, 65%);
+$text_1: hsl(221, 14%, 31%);
+$text1_1: hsl(0, 0%, 100%);
+
+$Main_2: hsl(0, 0%, 90%);
+$Toggle_keypad_2: hsl(0, 5%, 81%);
+$Screen_2: hsl(0, 0%, 93%);
+$KeyB_2: hsl(185, 42%, 37%);
+$KeyS_2: hsl(185, 58%, 25%);
+$KeyBT_2: hsl(25, 98%, 40%);
+$KeySt_2: hsl(25, 99%, 27%);
+$KeyNB_2: hsl(45, 7%, 89%);
+$KeySS_2: hsl(35, 11%, 61%);
+$text_2: hsl(60, 10%, 19%);
+$text2_2: hsl(0, 0%, 100%);
+
+$Main_3: hsl(268, 75%, 9%);
+$Toggle_keypad_3: hsl(268, 71%, 12%);
+$KeyB_3: hsl(281, 89%, 26%);
+$KeyS_3: hsl(285, 91%, 52%);
+$KeyBT_3: hsl(176, 100%, 44%);
+$KeySt_3: hsl(177, 92%, 70%);
+$KeyNB_3: hsl(268, 47%, 21%);
+$KeySS_3: hsl(290, 70%, 36%);
+$text_3: hsl(52, 100%, 62%);
+$text2_3: hsl(198, 20%, 13%);
+$text3_3: hsl(0, 0%, 100%);
+$t: 1s;
+
+body {
+  background-color: $Main_1;
+}
+
+.calculator {
+  background-color: $Main_1;
+  width: 100vw;
+  height: 100vh;
+  transition: $t;
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+
+  body.dark & {
+    background-color: $Main_3;
+  }
+
+  body.light & {
+    background-color: $Main_2;
+  }
+
+  .calculator-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+  }
+
+  .calculator-top {
+    transition: $t;
+
+    h3 {
+      color: $text1_1;
+
+      body.light & {
+        color: $text_2;
+      }
+      body.dark & {
+        color: $text_3;
+      }
+    }
+
+    h4 {
+      color: $text1_1;
+      font-size: 15px;
+      text-align: center;
+      margin-top: 5px;
+      transition: $t;
+      body.light & {
+        color: $text_2;
+      }
+      body.dark & {
+        color: $text_3;
+      }
+    }
+    span {
+      color: $text1_1;
+      font-size: 13px;
+      transition: $t;
+
+      body.light & {
+        color: $text_2;
+      }
+      body.dark & {
+        color: $text_2;
+      }
+    }
+  }
+  .calculator-top-result {
+    input {
+      background-color: $Screen_1;
+      color: $text1_1;
+      border: none;
+      margin-bottom: 20px;
+      text-align: right;
+      padding: 17px;
+      font-size: 32px;
+      border-radius: 10px;
+      transition: $t;
+
+      body.light & {
+        background-color: $Screen_2;
+        color: $text_2;
+      }
+      body.dark & {
+        background-color: $Toggle_keypad_3;
+        color: $text_3;
+      }
+    }
+  }
+
+  .slow {
+    background-color: $Toggle_keypad_1;
+    border-radius: 10px;
+    padding: 10px;
+    transition: $t;
+
+    body.light & {
+      background-color: $Toggle_keypad_2;
+      border: 2px solid $KeyNB_2;
+      box-shadow: 1px 1.5px 1px $KeySS_2;
+    }
+
+    body.dark & {
+      background-color: $Toggle_keypad_3;
+      border: 2px solid $KeyNB_3;
+      box-shadow: 1px 1.5px 1px $KeySS_3;
+    }
+  }
+
+  .col {
+    background-color: $KeyNB_1;
+    color: $KeyS_1;
+    font-weight: 700;
+    font-size: large;
+    border: 2px solid $KeyNB_1;
+    border-radius: 5px;
+    box-shadow: 1px 1.5px 1px $KeySS_1;
+    margin: 10px;
+    height: 35px;
+    transition: $t;
+
+    body.light & {
+      background-color: $KeyNB_2;
+      color: $text_2;
+      border: 2px solid $KeyNB_2;
+      box-shadow: 1px 1.5px 1px $KeySS_2;
+    }
+
+    body.dark & {
+      background-color: $KeyNB_3;
+      color: $text_3;
+      border: 2px solid $KeyNB_3;
+      box-shadow: 1px 1.5px 1px $KeySS_3;
+    }
+  }
+
+  #eliminar,
+  #del {
+    background-color: $KeyB_1;
+    color: $text1_1;
+    box-shadow: 1px 1.5px 1px $KeySS_1;
+    border: 2px solid $KeyB_1;
+    transition: $t;
+
+    body.light & {
+      background-color: $KeyB_2;
+      color: $text2_2;
+      box-shadow: 1px 1.5px 1px $KeySS_2;
+      border: 2px solid $KeyB_2;
+      transition: $t;
+    }
+
+    body.dark & {
+      background-color: $KeyB_3;
+      color: $text3_3;
+      box-shadow: 1px 1.5px 1px $KeySS_3;
+      border: 2px solid $KeyB_3;
+      transition: $t;
+    }
+  }
+
+  #eliminar {
+    font-size: 13px;
+    padding: 0 3%;
+  }
+
+  #Igual {
+    background-color: $KeyBT_1;
+    color: $KeyNB_1;
+    box-shadow: 1px 1.5px 1px $KeySt_1;
+    border: 2px solid $KeyBT_1;
+    transition: $t;
+
+    body.light & {
+      background-color: $KeyBT_2;
+      color: $KeyNB_2;
+      box-shadow: 1px 1.5px 1px $KeySt_2;
+      border: 2px solid $KeyBT_2;
+    }
+    body.dark & {
+      background-color: $KeyBT_3;
+      color: $KeyNB_3;
+      box-shadow: 1px 1.5px 1px $KeySt_3;
+      border: 2px solid $KeyBT_3;
+    }
+  }
+  .col:hover {
+    border: 2px solid $KeyNB_1;
+    color: $text1_1;
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.6s;
+
+    body.light & {
+      border: 2px solid $KeyNB_2;
+      color: $text2_2;
+      background-color: $KeyS_2;
+    }
+    body.dark & {
+      border: 2px solid $KeyNB_3;
+      color: $text2_2;
+      background-color: $KeyS_3;
+    }
+  }
+
+  #eliminar:hover,
+  #del:hover {
+    border: 2px solid $KeyB_1;
+    color: $KeyB_1;
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.6s;
+
+    body.light & {
+      border: 2px solid $KeyB_2;
+      color: $KeyB_2;
+      background-color: $KeyS_2;
+    }
+
+    body.dark & {
+      border: 2px solid $KeyB_3;
+      color: $KeyB_3;
+      background-color: $KeyS_3;
+    }
+  }
+
+  #Igual:hover {
+    border: $KeyBT_1;
+    color: $KeyBT_1;
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.6;
+
+    body.light & {
+      border: $KeyBT_2;
+      color: $KeyBT_2;
+      background-color: $KeyB_2;
+    }
+    body.dark & {
+      border: $KeyBT_3;
+      color: $KeyBT_3;
+      background-color: $KeyB_3;
+    }
+  }
+  
+  .col:active{
+    box-shadow: 3px 3px 3px $KeySS_1;
+    background-color: $KeyNB_1;
+    color: $Main_1;
+  }
+
+  #eliminar:active{
+    box-shadow: 3px 3px 3px $text_1;
+    background-color: $KeyB_1 ;
+    color: $text1_1;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none; 
+   
+    width: 100%;
+  
+    background: transparent;
+  
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type="range"]:focus {
+    outline: none;
+  }
+  
+  input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+   
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: $KeyBT_1;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px $KeySt_1;
+    transition: $t;
+
+    body.light &{
+        background: $KeyBT_2;  
+        box-shadow: 1px 1px 1px $KeySt_2;
+    }
+
+    body.dark &{
+        background: $KeyBT_3;  
+        box-shadow: 1px 1px 1px $KeySt_3;
+    }
+  }
+  
+  
+  input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: $KeyBT_1;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px $KeySt_1;
+
+    body.light &{
+        background: $KeyBT_2;  
+        box-shadow: 1px 1px 1px $KeySt_2;
+    }
+
+    body.dark &{
+        background: $KeyBT_3;  
+        box-shadow: 1px 1px 1px $KeySt_3;
+    }
+  }
+  
+  
+  input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: $KeyBT_1;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px $KeySt_1 ;
+
+    body.light &{
+        background: $KeyBT_2;  
+        box-shadow: 1px 1px 1px $KeySt_2;
+    }
+
+    body.dark &{
+        background: $KeyBT_3;  
+        box-shadow: 1px 1px 1px $KeySt_3;
+    }
+  }
+  
+  
+  .toggle {
+    background-color: $Toggle_keypad_1 ;
+    border-radius: 25px;
+    height: 25px;
+    padding: 0 6px !important;
+    transition: $t;
+
+    body.light &{
+        background-color: $Toggle_keypad_2;
+    }
+
+    body.dark &{
+        background-color: $Toggle_keypad_3;
+    }
+  }
+  
+  
+  .toggle input {
+    width: 100%;
+  }
+}

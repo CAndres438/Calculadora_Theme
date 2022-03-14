@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Reto 2 | Calculator app</title>
+</head>
+<body>
+
+    <div class="calculator container-fluid">
+        <div class="row calculator-content w-100 mx-auto">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-4 ">
+
+
+                <!-- Inicio de Calculadora -->
+                <div class="container calculator-top">
+
+                    <!-- Cambio de Tema -->
+                    <div class="row justify-content-end">
+                        <span class="col-1">1</span>
+                        <span class="col-1">2</span>
+                        <span class="col-1">3</span>
+                    </div>
+
+                    <!-- Elección de temas  -->
+                    <div class="calculator-top row">
+
+                        <h3 class="col-6">calc</h3>
+                        <h4 class="col-3">THEME</h4>
+
+                        <div class="col-3 toggle">
+                            <div class="btn-group">
+                                <input type="range" id="btnTheme" min="1" max="3" value="1" onchange="ThemeChange(this.value);">
+                            </div>
+                        </div>
+
+                    </div>
+                    <form id="form" class="form">
+                    <!-- Resultado  -->
+                    <div class="calculator-top-result row">
+                        <input type="text" class="col-12" id="Resultado" placeholder="0" disabled></input>
+                    </div>
+                </div>
+
+                <!-- Botones de Calculadora -->
+                <div class="calculator-keys">
+
+                    <!-- Botones -->
+                    <div class="container slow">
+                        <div class="row">
+                            <input class="col" type="button" value="7" onclick="Operador('7')">
+                            <input class="col" type="button" value="8" onclick="Operador('8')">
+                            <input class="col" type="button" value="9" onclick="Operador('9')">
+                            <input class="col" type="button" value="DEL" id="del">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="4" onclick="Operador('4')">
+                            <input class="col" type="button" value="5" onclick="Operador('5')">
+                            <input class="col" type="button" value="6" onclick="Operador('6')">
+                            <input class="col" type="button" value="+" onclick="Operador('+')">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="1" onclick="Operador('1')">
+                            <input class="col" type="button" value="2" onclick="Operador('2')">
+                            <input class="col" type="button" value="3" onclick="Operador('3')">
+                            <input class="col" type="button" value="-" onclick="Operador('-')">
+                        </div>
+                        <div class="row">
+                            <input class="col" type="button" value="." onclick="Operador('.')">
+                            <input class="col" type="button" value="0" onclick="Operador('0')">
+                            <input class="col" type="button" value="/" onclick="Operador('/')">
+                            <input class="col" type="button" value="x" onclick="Operador('*')">
+                        </div>
+                        <div class="row" id="Break">
+                            <input class="col" type="button" value="RESET" id="eliminar">
+                            <input class="col" type="button" value="=" id="Igual">
+                        </div>
+                    </div>
+                </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="attribution">
+        Coded by <a href="#">Carlos Andrés Ortiz</a>.
+    </div>
+    <script src="./Scripts/script.js"></script>
+</body>
+
+</html>
